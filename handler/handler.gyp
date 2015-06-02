@@ -34,6 +34,8 @@
           ],
           'include_dirs': [
             '..',
+            # For libbase header files.
+            '<(libchromiumcontent_src_dir)/',
           ],
           'sources': [
             'mac/crash_report_exception_handler.cc',
@@ -63,6 +65,23 @@
                   # Chromium.app/Contents/Versions/V/Framework.framework/Helpers
                   '@loader_path/../../../../../..',
                 ],
+              },
+            }],
+            ['libchromiumcontent_component', {
+              'xcode_settings': {
+                'LD_RUNPATH_SEARCH_PATHS': [  # -Wl,-rpath
+                  # Load libbase.dylib from
+                  # Electron.app/Contents/Frameworks/
+                  #     Electron Framework.framework/Libraries
+                  '@executable_path/../Libraries',
+                ],
+              },
+              'link_settings': {
+                'libraries': [ '<@(libchromiumcontent_dir)/libbase.dylib' ],
+              },
+            }, {  # else release build
+              'link_settings': {
+                'libraries': [ '<@(libchromiumcontent_dir)/libbase.a' ],
               },
             }],
           ],
