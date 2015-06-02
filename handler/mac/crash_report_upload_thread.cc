@@ -244,11 +244,13 @@ void CrashReportUploadThread::ProcessPendingReport(
       // If the most recent upload attempt occurred within the past hour, don’t
       // attempt to upload the new report. If it happened longer ago, attempt to
       // upload the report.
+#if 0
       const int kUploadAttemptIntervalSeconds = 60 * 60;  // 1 hour
       if (now - last_upload_attempt_time < kUploadAttemptIntervalSeconds) {
         database_->SkipReportUpload(report.uuid);
         return;
       }
+#endif
     } else {
       // The most recent upload attempt purportedly occurred in the future. If
       // it “happened” at least one day in the future, assume that the last
