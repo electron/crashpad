@@ -56,7 +56,7 @@
         ['OS=="mac"', {
           'link_settings': {
             'libraries': [
-              '$(SDKROOT)/usr/lib/libbsm.dylib',
+                '-lbsm',
             ],
           },
         }],
