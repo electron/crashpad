@@ -52,11 +52,11 @@
 
 // 10.9 SDK
 
-#if EXC_TYPES_COUNT > 13  // Definition varies with SDK
+#if EXC_TYPES_COUNT > 14  // Definition varies with SDK
 #error Update this file for new exception types
-#elif EXC_TYPES_COUNT != 13
+#elif EXC_TYPES_COUNT != 14
 #undef EXC_TYPES_COUNT
-#define EXC_TYPES_COUNT 13
+#define EXC_TYPES_COUNT 14
 #endif
 
 // <mach/i386/thread_status.h>
