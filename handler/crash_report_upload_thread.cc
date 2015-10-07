@@ -202,6 +202,7 @@ void CrashReportUploadThread::ProcessPendingReport(
     return;
   }
 
+#if 0
   // This currently implements very simplistic rate-limiting, compatible with
   // the Breakpad client, where the strategy is to permit one upload attempt per
   // hour, and retire reports that would exceed this limit or for which the
@@ -241,6 +242,7 @@ void CrashReportUploadThread::ProcessPendingReport(
       }
     }
   }
+#endif
 
   const CrashReportDatabase::Report* upload_report;
   CrashReportDatabase::OperationStatus status =
