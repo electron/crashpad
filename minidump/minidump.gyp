@@ -31,6 +31,8 @@
       ],
       'include_dirs': [
         '..',
+        # For libbase header files.
+        '<(libchromiumcontent_src_dir)/',
       ],
       'sources': [
         'minidump_annotation_writer.cc',
