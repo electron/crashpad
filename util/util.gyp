@@ -27,6 +27,8 @@
       'include_dirs': [
         '..',
         '<(INTERMEDIATE_DIR)',
+        # For libbase header files.
+        '<(libchromiumcontent_src_dir)/',
       ],
       'sources': [
         'file/file_io.cc',
