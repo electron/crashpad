@@ -28,6 +28,8 @@
       'include_dirs': [
         '..',
         '<(INTERMEDIATE_DIR)',
+        # For libbase header files.
+        '<(libchromiumcontent_src_dir)/',
       ],
       'sources': [
         'file/delimited_file_reader.cc',
@@ -337,7 +339,7 @@
               '$(SDKROOT)/System/Library/Frameworks/CoreFoundation.framework',
               '$(SDKROOT)/System/Library/Frameworks/Foundation.framework',
               '$(SDKROOT)/System/Library/Frameworks/IOKit.framework',
-              '$(SDKROOT)/usr/lib/libbsm.dylib',
+              '-lbsm',
             ],
           },
         }],

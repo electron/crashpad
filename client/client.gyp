@@ -27,6 +27,8 @@
       ],
       'include_dirs': [
         '..',
+        # For libbase header files.
+        '<(libchromiumcontent_src_dir)/',
       ],
       'sources': [
         'annotation.cc',
