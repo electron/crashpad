@@ -105,7 +105,10 @@
               },
             }, {  # else release build
               'link_settings': {
-                'libraries': [ '<@(libchromiumcontent_dir)/libbase.a' ],
+                'libraries': [
+                  '<@(libchromiumcontent_dir)/libbase.a',
+                  '$(SDKROOT)/System/Library/Frameworks/AppKit.framework',
+                ],
               },
             }],
           ],
