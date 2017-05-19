@@ -369,7 +369,7 @@ bool HTTPTransportWin::ExecuteSynchronously(std::string* response_body) {
     return false;
   }
 
-  if (status_code != 200) {
+  if (status_code < 200 || status_code >= 300) {
     LOG(ERROR) << base::StringPrintf("HTTP status %d", status_code);
     return false;
   }
