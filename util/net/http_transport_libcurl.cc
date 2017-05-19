@@ -338,7 +338,7 @@ bool HTTPTransportLibcurl::ExecuteSynchronously(std::string* response_body) {
     return false;
   }
 
-  if (status != 200) {
+  if (status < 200 || status >= 300) {
     LOG(ERROR) << base::StringPrintf("HTTP status %ld", status);
     return false;
   }
